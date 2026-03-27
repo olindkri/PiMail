@@ -104,6 +104,54 @@
             });
     }
 
+    // === DRAG TO MOVE ===
+    (function () {
+        var win = document.getElementById("window");
+        var titlebar = document.getElementById("titlebar");
+        var offsetX = 0, offsetY = 0, dragging = false;
+
+        function onStart(e) {
+            // Don't drag if clicking resize handle area (bottom-right 16px)
+            var rect = win.getBoundingClientRect();
+            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            if (clientX > rect.right - 16 && clientY > rect.bottom - 16) return;
+
+            dragging = true;
+            // Switch from centered to absolute positioning on first drag
+            if (win.style.position !== "absolute") {
+                var r = win.getBoundingClientRect();
+                win.style.position = "absolute";
+                win.style.left = r.left + "px";
+                win.style.top = r.top + "px";
+            }
+            offsetX = clientX - win.offsetLeft;
+            offsetY = clientY - win.offsetTop;
+            e.preventDefault();
+        }
+
+        function onMove(e) {
+            if (!dragging) return;
+            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            win.style.left = (clientX - offsetX) + "px";
+            win.style.top = (clientY - offsetY) + "px";
+            e.preventDefault();
+        }
+
+        function onEnd() {
+            dragging = false;
+        }
+
+        titlebar.addEventListener("mousedown", onStart);
+        document.addEventListener("mousemove", onMove);
+        document.addEventListener("mouseup", onEnd);
+
+        titlebar.addEventListener("touchstart", onStart, { passive: false });
+        document.addEventListener("touchmove", onMove, { passive: false });
+        document.addEventListener("touchend", onEnd);
+    })();
+
     // Re-fit emails when the window is resized
     var resizeTimer;
     var resizeObserver = new ResizeObserver(function () {
