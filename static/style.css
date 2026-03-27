@@ -14,7 +14,7 @@ html, body {
     height: 100vh;
     overflow: hidden;
     font-family: "IBM Plex Mono", "Courier New", "Lucida Console", monospace;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.4;
     -webkit-font-smoothing: none;
 }
@@ -97,7 +97,7 @@ html, body {
 }
 
 #titlebar-title {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
     color: #a0a0b8;
     letter-spacing: 0.5px;
@@ -143,9 +143,9 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 28px;
-    min-height: 28px;
-    font-size: 16px;
+    height: 32px;
+    min-height: 32px;
+    font-size: 20px;
     font-weight: 700;
     border-bottom: 1px solid #1a8c1a;
     padding-bottom: 3px;
@@ -201,7 +201,7 @@ html, body {
 
 .mail-sender {
     font-weight: 700;
-    font-size: 17px;
+    font-size: 21px;
     color: #33ff33;
     white-space: nowrap;
     overflow: hidden;
@@ -215,7 +215,7 @@ html, body {
 }
 
 .mail-time {
-    font-size: 14px;
+    font-size: 18px;
     color: #1a8c1a;
     white-space: nowrap;
     margin-left: 8px;
@@ -223,7 +223,7 @@ html, body {
 }
 
 .mail-summary {
-    font-size: 15px;
+    font-size: 19px;
     color: #29cc29;
     margin-top: 2px;
     display: -webkit-box;
@@ -238,7 +238,7 @@ html, body {
     display: inline-block;
     margin-top: 3px;
     padding: 1px 6px;
-    font-size: 17px;
+    font-size: 21px;
     font-weight: 700;
     color: #0c1628;
     background: #ffaa00;
@@ -257,9 +257,9 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 24px;
-    min-height: 24px;
-    font-size: 14px;
+    height: 28px;
+    min-height: 28px;
+    font-size: 18px;
     color: #1a8c1a;
     border-top: 1px solid #1a8c1a;
     padding-top: 2px;
@@ -272,7 +272,7 @@ html, body {
     align-items: center;
     justify-content: center;
     flex: 1;
-    font-size: 17px;
+    font-size: 21px;
     color: #1a8c1a;
 }
 
