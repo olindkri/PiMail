@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>PiMail</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div id="window">
+            <div id="titlebar">
+                <span id="titlebar-left">
+                    <span class="win-btn close"></span>
+                    <span class="win-btn minimize"></span>
+                    <span class="win-btn maximize"></span>
+                </span>
+                <span id="titlebar-title">pimail@raspberrypi: ~/inbox</span>
+                <span id="titlebar-right"></span>
+            </div>
+            <div id="screen">
+                <div id="header">
+                    <span>[ PiMail v1.0 ]</span>
+                    <span>-- <span id="clock"></span> --</span>
+                    <span>[<span id="status" class="ok">OK</span>]<span class="blink">_</span></span>
+                </div>
+                <div id="emails"></div>
+                <div id="footer">
+                    <span id="mail-count">0 messages</span>
+                    <span id="last-check"></span>
+                </div>
+            </div>
+            <div id="scanlines"></div>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>

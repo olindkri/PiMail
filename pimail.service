@@ -1,0 +1,16 @@
+[Unit]
+Description=PiMail Email Dashboard Backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=olindkri
+WorkingDirectory=/home/olindkri/PiMail
+Environment=PATH=/home/olindkri/PiMail/venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/olindkri/PiMail/venv/bin/python app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
